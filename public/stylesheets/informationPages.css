@@ -1,0 +1,44 @@
+.mainDiv {
+  width: 1000px;
+  border-width: 0px;
+}
+.homepageHeadline {
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 5%;
+}
+.homepageContent {
+  font-size: large;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.jumbotron {
+  background-color: transparent;
+  margin-top: 60px;
+}
+.sideImg {
+  width: 300px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  z-index: -10;
+}
+/* About page */
+.aboutDiv {
+  padding: 0 30px;
+}
+.aboutDiv .homepageHeadline {
+  margin-bottom: 0;
+}
+.aboutDiv .homepageContent {
+  margin-bottom: 0;
+}
+.aboutDiv .jumbotron {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-top: 0;
+}
+/* Index page */
+.btn {
+  background-color: #faa12c;
+}

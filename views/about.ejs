@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/informationPages.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <%- include("partials/navbar", {firstName: loggedUser ?
+        loggedUser.firstName : ""}) %>
+
+        <div class="mainDiv aboutDiv">
+          <div class="jumbotron" style="text-align:left;padding-top:0px;margin-top:0px">
+            <h1 class="display-4">Now,easily customize your greeting cards!</h1>
+            <p class="lead">   
+               The idea for the project is to create customized cards on special occasions for the people you care about. <br><br>             
+               
+            express your love to your loved ones with attractive and perfect cards within a second.
+              <br />
+              <br>
+              <br>
+              <span class="handWriteFontEnglish"> *create cards using filters according to you occasionwise.</span>
+             <br>
+             <span class="handWriteFontEnglish">*save the cards in your account.</span>
+              <br>
+              <br/>
+              <img src="\images\dance_card.png" style="width:400px;height:auto">
+              <img src="\images\collect_moments.png" style="width:400px;height:auto">
+            </p>
+
+            <hr class="my-4" />
+            <h1 class="display-4"> a little about me</h1>
+
+            <p class="lead">
+              I am Anushka Singh,i am the person with the idea and efforts behind this application.
+              <br />
+             i graduated from IIT,Kharagpur in 2023.  
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer") %>
+  </body>
+</html>

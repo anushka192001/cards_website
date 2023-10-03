@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <%- include("partials/navbar", {firstName: ""}) %>
+        <div class="mainDiv loginFormDiv">
+          <h2 class="pageHeadline">Login</h2>
+          <% if (message) { %>
+          <h5 class="text-danger"><%= message %></h5>
+          <% } %>
+      
+
+          <form action="/login" method="post" style="margin-left:200px">
+            <!-- user Name -->
+            <div class="form-group form-row">
+              <label for="username" class="col-sm-2 col-form-label"
+                >Username
+              </label>
+              <div class="col-sm-5 handWriteFontEnglish">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  id="username"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- password -->
+            <div class="form-group form-row">
+              <label for="password" class="col-sm-2 col-form-label"
+                >Password
+              </label>
+              <div class="col-sm-5">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                  value=""
+                  pattern="[0-9a-zA-Z]{4,13}"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9 offset-sm-4" style="text-align:center">
+                <button type="submit" class="btnEffect" style="margin-left:-10px">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer") %>
+  </body>
+</html>

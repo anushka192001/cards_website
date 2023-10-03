@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/privatePages.css" />
+  </head>
+  <body>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              The update was successful
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal -->
+    <div id="wrapper">
+      <div class="container adminPage">
+        <%- include("partials/navbar", {firstName: firstName}) %>
+        <div class="mainDiv adminDiv">
+          <h2 class="accountHeadline">Management area</h2>
+
+          <div class="hello">
+            שלום <%= firstName %>,
+          </div>
+
+          <div class="sectionHeadline">Update participants</div>
+
+          <div class="users">
+            <% usersDB.forEach(function(user){ %> <% if
+            (!user._id.equals(adminId)) { %>
+
+            <div class="oneUser">
+              <!-- user Name -->
+              <div class="col-sm-5 handWriteFontEnglish userNameHeadLine">
+                <%= user.username %>
+              </div>
+              <!-- full name -->
+              <div class="col-sm-5">
+                <%= user.firstName %> <%= user.lastName %>
+              </div>
+              <!-- email -->
+              <div class="col-sm-5 handWriteFontEnglish">
+                <%= user.email %>
+              </div>
+              <form
+                id="editUserForm-<%- user._id %>"
+                action="/admin/edit"
+                method="POST"
+                class="formStyle"
+              >
+                <input type="hidden" name="userId" value="<%- user._id %>" />
+
+                <!-- is admin -->
+                <div class="form-group form-check-inline">
+                  <% if (user.isAdmin) { %>
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="isAdmin"
+                    name="isAdmin"
+                    checked
+                  />
+                  <% } else { %>
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="isAdmin"
+                    name="isAdmin"
+                  />
+                  <% } %>
+                  <label class="form-check-label" for="isAdmin">Manager</label>
+                </div>
+
+                <!-- is active -->
+                <div class="form-group form-check-inline">
+                  <% if (user.isActive) { %>
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="isActive"
+                    name="isActive"
+                    checked
+                  />
+                  <% } else { %>
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="isActive"
+                    name="isActive"
+                  />
+                  <% } %>
+                  <label class="form-check-label" for="isActive">Active</label>
+                </div>
+                <button type="submit" class="btnEffect">
+                updating
+                </button>
+              </form>
+            </div>
+            <% }}) %>
+            <!-- end loop -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer") %> <% usersDB.forEach(function (user) { %>
+    <!-- Modal controller -->
+    <script>
+      $(document).ready(function() {
+        $("#editUserForm-<%- user._id %>").submit(function() {
+          $.ajax({
+            type: "POST",
+            url: "/admin/edit",
+            data: $("#editUserForm-<%- user._id %>").serialize(),
+            success: function() {
+              $("#myModal").modal("show");
+            }
+          });
+          return false;
+        });
+      });
+    </script>
+    <% }) %>
+  </body>
+</html>

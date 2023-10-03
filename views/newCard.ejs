@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <%- include("partials/head") %>
+  <link rel="stylesheet" href="/stylesheets/newCard.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <div class="container">
+        <%- include("partials/navbar", {firstName: firstName}) %>
+
+
+      <div class="mainDiv sketchDiv">
+
+        <h2 class="sketchHeadline"><%= headline %></h2>
+        
+        <form action=<% if (cardData._id) { %> <%-`/cards/${cardData._id}/edit` %> <% } else { %> <%- "/cards" %> <% } %> method="post">
+
+          <div class="form-group row">
+            <label for="forname" class="col-sm-2 col-form-label">Who is the blessing for?</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="card[forname]" id="forname" value = "<%- cardData.recipientDescription %>">
+            </div>
+          </div>
+
+          <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Form of contact</legend>
+                <div class="col-sm-4">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="card[gender]" id="male" value="male" <% if (cardData.gender === "male") { %> <%- "checked" %> <% } %> >
+                    <label class="form-check-label" for="male">
+                      male
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="card[gender]" id="female" value="female" <% if (cardData.gender === "female") { %> <%- "checked" %> <% } %>>
+                    <label class="form-check-label" for="female">
+                      female
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-group form-row">
+              <label class="col-sm-2 col-form-label offset-sm-3" for="eventType">What is the event?</label>
+              <div class="col-sm-4">
+              <select class="form-control" name="card[eventType]" id="eventType">
+                <option value="birthday" <% if (cardData.eventType === "birthday") { %> <%- "selected" %> <% } %>>birthday</option>
+                <option value="degree" <% if (cardData.eventType === "degree") { %> <%- "selected" %> <% } %>>Getting a degree</option>
+                <option value="newyear" <% if (cardData.eventType === "newyear") { %> <%- "selected" %> <% } %>>New year</option>
+                <option value="anniversary" <% if (cardData.eventType === "anniversary") { %> <%- "selected" %> <% } %>>Anniversary</option>
+
+              </select>
+           </div>
+
+          </div>
+
+          <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0 offset-sm-3">Interests</legend>
+                <div class="col-sm-7">
+                  
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="card[interests]" id="interestsGeneral" value="general" checked>
+                    <label class="form-check-label" for="interestsGeneral">
+                      general
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="card[interests]" id="interestsCats" value="cats" <% if (cardData.interests === "cats") { %> <%- "checked" %> <% } %>>
+                    <label class="form-check-label" for="interestsCats">
+                      cats
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="card[interests]" id="interestsDogs" value="dogs" <% if (cardData.interests === "dogs") { %> <%- "checked" %> <% } %>>
+                    <label class="form-check-label" for="interestsDogs">
+                      Seal
+                    </label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="card[interests]" id="interestsTravel" value="travel" <% if (cardData.interests === "travel") { %> <%- "checked" %> <% } %>>
+                      <label class="form-check-label" for="interestsTravel">
+                        trips
+                      </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="card[interests]" id="interestsDance" value="dance" <% if (cardData.interests === "dance") { %> <%- "checked" %> <% } %>>
+                        <label class="form-check-label" for="interestsDance">
+                          dances
+                        </label>
+                      </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="card[interests]" id="interestsPodcast" value="lowbattery" <% if (cardData.interests === "lowbattery") { %> <%- "checked" %> <% } %>>
+                        <label class="form-check-label handWriteFontEnglish" for="interestsPodcast">
+                          Low-Battery
+                        </label>
+                      </div>
+
+                </div>
+              </div>
+            </fieldset>
+
+          <fieldset class="form-group">
+              <div class="row ">
+                <legend class="col-form-label col-sm-2 pt-0 offset-sm-3">The nature of the blessing</legend>
+                <div class="col-sm-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="card[style]" id="classic" value="classic" <% if (cardData.style === "classic") { %> <%- "checked" %> <% } %>>
+                    <label class="form-check-label" for="classic">
+                      &nbsp; &nbsp;Classic
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="card[style]" id="Geek" value="geek" <% if (cardData.style === "geek") { %> <%- "checked" %> <% } %>>
+                    <label class="form-check-label" for="Geek">
+                      &nbsp;&nbsp;&nbsp;Geek
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          <div class="form-group row">
+            
+              <label class="col-sm-2 col-form-label offset-sm-7" for="senderSignature">Signature form</label>
+              <div class="col-sm-3">
+              <select class="form-control" name="card[senderSignature]" id="senderSignature">
+                <% for (let sig in signatures) { %>
+                  <% if (cardData.senderSignature === sig) { %>
+                    <option value="<%- sig %>" selected><%- signatures[sig] %></option>
+                    <% } else { %>
+                      <option value="<%- sig %>"><%- signatures[sig] %></option>
+                  <% }} %>
+              </select>
+              </div>
+            
+          </div>
+
+          <div class="form-group row">
+              <label class="col-sm-2 col-form-label offset-sm-7" for="senderName">Your name</label>
+              <div class="col-sm-3">
+              <input type="text" class="form-control" name="card[senderName]" id="senderName" value = "<%- cardData.senderNameDescription %>">
+            </div>
+          </div>
+          
+
+          <div class="row">
+              <div class="col-sm-9 offset-sm-5">
+                  <button type="submit" class="btn btn-info">Congratulations!</button>
+              </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include("partials/footer") %>
+</body>
+</html>

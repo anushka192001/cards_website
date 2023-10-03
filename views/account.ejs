@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/slick.css" />
+    <link rel="stylesheet" href="/stylesheets/slick-theme.css" />
+    <link rel="stylesheet" href="/stylesheets/privatePages.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container accountPage">
+        <%- include("partials/navbar", {firstName: firstName}) %>
+        <div class="mainDiv accountDiv">
+          <h2 class="accountHeadline">Your Saved Cards</h2>
+
+          <div class="hello">
+            Hi  <%= firstName %>
+            <small class="form-text "
+              ><a href="/edit" class="editDetailsBtn">editing details</a></small
+            >
+          </div>
+
+          <div class="sectionHeadline"></div>
+
+          <div class="carousel">
+            <% if (cards.length === 0) { %> you have no tickets<% } else{ %> <%
+            cards.forEach(function(card) { if (card.finalCardPicUrl) { %>
+            <div class="imgSlidePosition">
+              <a href="/cards/<%- card._id %>/edit">
+                <img class="" src="<%- card.finalCardPicUrl %>" width="800px"
+              /></a>
+            </div>
+
+            <% }}) }%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer") %>
+    <!-- Slick carousel -->
+    <script src="/javascript/slick.min.js"></script>
+    <script>
+      let picNum = $(".imgSlidePosition").length;
+
+      $(document).ready(function() {
+        $(".carousel").slick({
+          slidesToShow: 3,
+          infinite: true,
+          dots: true,
+          centerMode: true,
+          initialSlide: 0,
+          lazyLoad: "progressive" //ondemand
+          // variableWidth: true
+        });
+
+        for (let div of $(".imgSlidePosition")) {
+          div.style.transform = `translate(calc(${picNum}), 0)`;
+        }
+      });
+    </script>
+  </body>
+</html>

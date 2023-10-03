@@ -1,0 +1,22 @@
+.navBarStyle {
+  background-color: #faa12c;
+}
+.navbar-brand {
+  position: relative;
+}
+.imgLogo {
+  position: absolute;
+  right: 0;
+}
+.imgLogo img {
+  width: 80px;
+  height: 80px;
+}
+.logoTextNav {
+  padding-right: 60px;
+  color: palegoldenrod;
+}
+.helloText {
+  font-size: x-large;
+  padding-right: 30px;
+}

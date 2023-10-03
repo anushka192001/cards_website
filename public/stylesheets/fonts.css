@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "GveretLevin";
+  src: url("fonts/GveretLevinAlefAlefAlef-Regular.ttf") format("truetype"),
+    url("fonts/GveretLevinAlefAlefAlef-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}

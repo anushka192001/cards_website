@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/showCard.css" />
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "782528815534043",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v4.0",
+        });
+      };
+    </script>
+    <script
+      async
+      defer
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script>
+    <div id="wrapper">
+      <div class="container">
+        <%- include("partials/navbar", {firstName: firstName}) %>
+
+        <div class="cardDiv <%- cardData.cssStyle.split(' ')[0] %>">
+          <div class="<%- cardData.cssStyle.split(' ')[1] %>">
+            <div class="firstLine">
+              <%= cardData.recipientDescription %><%= cardData.genderDescription
+              %>
+            </div>
+            <div class="eventMsg"><%= cardData.eventDescription %></div>
+            <div class="msg">
+              <%= cardData.line1Description %>
+              <br />
+              <%= cardData.line2Description %>
+            </div>
+            <div class="lastLine">
+              <%= cardData.senderSignatureDescription %> <%=
+              cardData.senderNameDescription %>
+            </div>
+          </div>
+          <div class="imgStyle">
+            <img src=<%= cardData.picUrl %> alt=<%= cardData.eventType %> />
+          </div>
+        </div>
+        <div class="btns">
+          <!-- <button class="btnEffect" id="captureBtn">
+            הצגת תמונה
+          </button> -->
+          <button class="btnEffect" id="editBtn"> Editing</button>
+          <!-- <button class="btnEffect" id="uploadBtn" disabled>
+            שיתוף בפייסבוק
+          </button> -->
+        </div>
+        <!-- <div id="imgurLink"></div> -->
+        <!-- <div class="instructions">
+          * לחיצה על כפתור הצגת תמונה תפתח חלון חדש בו עליכם ללחוץ על לחצן ימני
+          ו'שמירה כתמונה'
+        </div> -->
+      </div>
+    </div>
+    <%- include("partials/footer") %>
+    <script src="/javascript/html2canvas.js"></script>
+    <script src="/javascript/printscreen.js"></script>
+    <script src="/javascript/editCardBtn.js"></script>
+    <script src="/javascript/imgurShare.js"></script>
+  </body>
+</html>

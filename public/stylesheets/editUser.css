@@ -1,0 +1,25 @@
+.editUserPage .mainDiv {
+  margin-top: -30px;
+  padding: 20px;
+  border: 3px solid rgb(106, 204, 111);
+}
+.editUserPage .pageHeadline {
+  transform: translate(0, 0);
+  text-align: center;
+}
+
+.editUserPage .btnEffect {
+  color: #fefefe;
+  background: #10c562;
+  border: 4px solid #10c562;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+.editUserPage .btnEffect:hover {
+  background: transparent;
+  color: #10c562;
+}
+.editUserPage .navBarStyle {
+  background-color: rgb(106, 204, 111);
+}

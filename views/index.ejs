@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/informationPages.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <%- include("partials/navbar", {firstName: loggedUser ?
+        loggedUser.firstName : ""}) %>
+
+        <div class="mainDiv">
+          <img class="sideImg" src="/images/balloons_6.png" alt="" />
+          <div class="jumbotron ">
+            <h1 class="display-4">Welcome to the generator of blessings website</h1>
+            <p class="lead">
+              The place to create perfect greeting cards easily!
+            </p>
+            <hr class="my-4" />
+            <% if (!loggedUser) { %>
+            <a class="btn btn-lg" href="/register" role="button"
+              >Join now!</a
+            >
+            <% } else { %>
+            <a class="btn btn-lg" href="/cards/new" role="button">Create a blessing!</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer") %>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/register.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <%- include("partials/navbar", {firstName: ""}) %>
+        <div class="mainDiv registerFormDiv">
+          <h2 class="pageHeadline">Registration</h2>
+
+          <form action="/register" method="post" style="margin-left:190px">
+            <!-- first name -->
+            <div class="form-group form-row">
+              <label for="firstName" class="col-sm-2 col-form-label"
+              >First name
+              </label>
+              <div class="col-sm-5">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="firstName"
+                  id="firstName"
+                  pattern="[a-zA-Z][a-zA-Z ]+" 
+                  value="<% if (firstName) { %> <%- firstName %> <% } %>"
+                  required
+                />
+                <small id="firstName" class="form-text text-muted">
+      
+                </small>
+              </div>
+            </div>
+            <!-- last name -->
+            <div class="form-group form-row">
+              <label for="lastName" class="col-sm-2 col-form-label"
+              > Surname
+              </label>
+              <div class="col-sm-5">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="lastName"
+                  id="lastName"
+                  pattern="[a-zA-Z][a-zA-Z ]+"
+                  value="<% if (lastName) { %> <%- lastName %> <% } %>"
+                  required
+                />
+                <small id="firstName" class="form-text text-muted">
+            
+                </small>
+              </div>
+            </div>
+            <!-- email -->
+            <div class="form-group form-row">
+              <label for="email" class="col-sm-2 col-form-label"> email</label>
+              <div class="col-sm-5 handWriteFontEnglish">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  value="<% if (email) { %> <%- email %> <% } %>"
+                  id="email"
+                  required
+                />
+              </div>
+            </div>
+            <!-- user Name -->
+            <div class="form-group form-row">
+              <label for="username" class="col-sm-2 col-form-label"
+                >Username
+              </label>
+              <div class="col-sm-5 handWriteFontEnglish">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  id="username"
+                  value=""
+                  required
+                />
+                <small class="form-text text-danger">
+                  <% if (message) { %> <%= message %> <% } %>
+                </small>
+              </div>
+            </div>
+
+            <!-- password -->
+            <div class="form-group form-row">
+              <label for="password" class="col-sm-2 col-form-label"
+                >Password
+              </label>
+              <div class="col-sm-5">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                  value=""
+                  pattern="[0-9a-zA-Z]{4,13}"
+                  required
+                />
+                <small id="password" class="form-text text-muted">
+                  The password should consist of 4-13 letters and numbers
+                </small>
+              </div>
+            </div>
+
+          
+
+            <div class="row" style="margin-left:150px">
+              <div class="col-sm-9 offset-sm-4" style="text-align: center">
+                <button type="submit" class="btnEffect" style="margin-left:-190px">Registration</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer") %>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.loginFormDiv {
+  border: 3px solid rgb(255, 0, 128);
+  border-radius: 15%;
+  transform: translate(0, 10%);
+}
+.btnEffect {
+  color: #fefefe;
+  background: rgb(255, 0, 128);
+  border: 4px solid rgb(255, 0, 128);
+}
+.btnEffect:hover {
+  color: rgb(255, 0, 128);
+}
+.loginFormDiv img {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 200px;
+  position: absolute;
+  bottom: 5%;
+  left: 4%;
+}
+.navBarStyle {
+  background-color: rgb(245, 158, 201);
+}

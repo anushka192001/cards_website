@@ -1,0 +1,95 @@
+.cardDiv {
+  margin: auto auto;
+  margin-top: -15px;
+  padding: 10px;
+  transform: translate(0, 10%);
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+}
+.border1 {
+  border: 5px solid rgb(70, 1, 70);
+}
+.border2 {
+  border: 8px solid rgb(4, 182, 226);
+}
+.text1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  line-height: 2;
+  width: 400px;
+}
+.text2 {
+  font-family: "Tinos", serif;
+  font-size: 24px;
+  line-height: 2;
+}
+.firstLine {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 5%;
+}
+.eventMsg {
+  text-align: center;
+  margin-bottom: 10%;
+  font-size: larger;
+}
+.msg {
+  text-align: center;
+}
+.lastLine {
+  font-weight: bold;
+  text-align: left;
+  margin-top: 15%;
+}
+.cardDiv img {
+  width: auto;
+  height: auto;
+  max-width: 450px;
+  max-height: 450px;
+}
+.btns {
+  margin: 5% auto 0 auto;
+  text-align: center;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+.instructions {
+  display: block;
+  text-align: right;
+  width: 800px;
+  margin: 20px auto 0 auto;
+}
+.btnEffect {
+  color: #fefefe;
+  background: #190042;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  border: 4px solid #190042;
+  text-align: center;
+  border-radius: 60px;
+  width: 180px;
+  padding: 5px;
+  margin: 0 5px;
+}
+.btnEffect:hover {
+  background: transparent;
+  color: #190042;
+}
+.btnEffect:disabled {
+  background: #675d79;
+  color: #fefefe;
+  border: 4px solid #675d79;
+}
+.navBarStyle {
+  background-color: #b698e6;
+}
+.cardText {
+  width: 400px;
+}
+#imgurLink {
+  text-align: center;
+  font-size: 24px;
+}

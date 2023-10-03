@@ -1,0 +1,28 @@
+.registerFormDiv {
+  border: 3px solid rgb(134, 23, 60);
+  border-radius: 5%;
+  transform: translate(0, 5%);
+  padding-top: 15px;
+}
+.pageHeadline {
+  margin-bottom: 15px;
+}
+.btnEffect {
+  background: rgb(134, 23, 60);
+  border: 4px solid rgb(134, 23, 60);
+}
+.btnEffect:hover {
+  color: rgb(134, 23, 60);
+}
+.registerFormDiv img {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 200px;
+  position: absolute;
+  bottom: 5%;
+  left: 4%;
+}
+.navBarStyle {
+  background-color: rgb(207, 139, 162);
+}

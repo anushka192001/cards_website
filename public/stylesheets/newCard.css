@@ -1,0 +1,13 @@
+.sketchDiv {
+  padding: 20px;
+  border: 3px solid rgb(0, 204, 255);
+  border-radius: 5%;
+}
+
+.sketchHeadline {
+  margin-bottom: 5%;
+  text-align: center;
+}
+.navBarStyle {
+  background-color: rgb(101, 178, 197);
+}
