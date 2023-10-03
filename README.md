@@ -1,5 +1,10 @@
 # About the project
 it is a greeting cards full stack project developed by me.
+database hosted on- mongodb atlas.
+websited hosted on- https://fancy-ruby-twill.cyclic.cloud/ 
+
+# technologies used
+nodejs,express,ejs,css,mongodb atlas,passport etc.
 
 
 # functionalities 
