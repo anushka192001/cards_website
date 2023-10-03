@@ -1,8 +1,8 @@
-#greeting card project
+# About the project
 it is a greeting cards full stack project developed by me.
 
 
-#functionalities 
+# functionalities 
 1.create cards using filters according to you occasionwise.
 2.save the cards in your account.
 
